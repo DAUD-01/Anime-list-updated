@@ -313,6 +313,9 @@ body.dark-mode #Go-up a { color: white; }
       padding-left: 1.4rem; 
       margin: 0; 
   }
+  .below {
+  text-size: small;  
+  }        
   #links { 
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));   
     line-height: 2;
