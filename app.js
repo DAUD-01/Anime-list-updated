@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
               data-aos-easing="ease-in-out"
               data-aos-delay="50">
             </a>
-            <br><u><em class="Below">Click on image to view trailer</em></u>
+            <br><u><em class="Below">Click the image above to watch the trailer</em></u>
             <p class="anime-description"><b>Story: </b>${anime.description}</p>
             <p>
               <a href="${anime.imdbUrl}" target="_blank">IMDb</a> | 
