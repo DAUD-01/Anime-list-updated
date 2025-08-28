@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       animeData.forEach((anime, index) => {
         const animeHtml = `
           <div id="anime-${index}" class="anime-card-container">
-            <li class="AnimeName" data-aos="zoom-out" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-delay="50"><strong >${anime.title}</strong></li>
+            <li class="AnimeName" data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-delay="50"><strong >${anime.title}</strong></li>
             <ul data-aos="fade-left"  data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-delay="50">
               <li>Genre: ${anime.genre}</li>
               <li>Aired: ${anime.aired}</li>
