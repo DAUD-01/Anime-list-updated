@@ -67,22 +67,22 @@ a:hover { color: var(--anker-hover-light); }
 
 .AnimeName {
   color: var(--highlight-light);
-  font-size: 1.3rem;
-  text-decoration: underline black;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .anime-description {
   margin: 20px 0;
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--an-description-light);
-  line-height: 20px;
+  line-height: 25px;
   text-transform: capitalize;
 }
 
 ul {
   margin: 10px 0;
   padding-left: 0;
-  list-style-type: square;
+  list-style-type: circle;
   font-size: 1.1rem;
 }
 
@@ -247,25 +247,9 @@ body.dark-mode h1 {
   color: var(--h1-color);
   border-bottom: 2px solid var(--highlight-dark);
 }
-body.dark-mode .below {
-  color: var(--trailer-text-dark);
-}
-body.dark-mode .below:hover {
-  color: var(--trailer-text-hover-dark);
-}
-
-
 body.dark-mode .anime-description { color: var(--an-description-dark); }
 body.dark-mode ul { list-style-type: circle; }
 body.dark-mode img { border-color: rgba(255, 255, 255, 0.2); }
-
-/* body.dark-mode #Go-up {
-  background-color: hsl(240, 100%, 65%);
-  color: white;
-  border-color: lightgreen;
-}
-body.dark-mode #Go-up:active { background-color: #4f83cc; } */
-
 body.dark-mode footer {
   background-color: var(--footer-bg-color-dark);
   color: white;
@@ -278,7 +262,6 @@ body.dark-mode a { color: var(--anker-dark); }
 body.dark-mode a:hover { color: var(--anker-hover-dark); }
 body.dark-mode .AnimeName {
   color: var(--highlight-dark);
-  text-decoration: underline gray;
 }
 body.dark-mode #search-button { background-color: var(--highlight-dark); }
 body.dark-mode #anime-input { caret-color: var(--highlight-dark); }
