@@ -68,7 +68,7 @@ a:hover { color: var(--anker-hover-light); }
 .AnimeName {
   color: var(--highlight-light);
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 650;
 }
 
 .anime-description {
@@ -222,20 +222,6 @@ footer {
 .below:hover {
   color: var(--trailer-text-hover-light);
 }
-
-/* #Go-up {
-  padding: 5px 15px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: hsl(60, 100%, 40%);
-  cursor: pointer;
-}
-#Go-up:active {
-  background-color: skyblue;
-  font-weight: 400;
-  transform: scale(0.97);
-} */
-
 /* DARK MODE */
 body.dark-mode {
   background-color: var(--bg-color-dark);
@@ -321,7 +307,7 @@ body.dark-mode #Go-up a { color: white; }
     font-weight: 500;
   }
   .AnimeName {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
   }
   .anime-description {
       font-size: 12px
