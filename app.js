@@ -12,29 +12,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
       animeData.forEach((anime, index) => {
         const animeHtml = `
-          <div id="anime-${index}" class="anime-card-container">
-            <li class="AnimeName" data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-delay="50"><strong >${anime.title}</strong></li>
-            <ul data-aos="fade-left"  data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-delay="50">
-              <li>Genre: ${anime.genre}</li>
-              <li>Aired: ${anime.aired}</li>
-              <li>Rating: ${anime.rating}</li>
-              <li>Duration per Episode: ${anime.duration}</li>
-              <li>Studio: ${anime.studio}</li>
-            </ul>
-            <a href="${anime.trailerUrl}" target="_blank">
-              <img class="anime-card" src="${anime.imageUrl}" alt="${anime.title} image" width="700" height="400px" data-aos="fade-right"  data-aos-duration="400" 
-              data-aos-easing="ease-in-out"
-              data-aos-delay="50">
-            </a>
-            <br><u><em class="Below">Click the image above to watch the trailer</em></u>
-            <p class="anime-description"><b>Story: </b>${anime.description}</p>
-            <p>
-              <a href="${anime.imdbUrl}" target="_blank">IMDb</a> | 
-              <a href="${anime.malUrl}" target="_blank">MyAnimeList</a>
-              <br><br>
-            </p>
-          </div>
-        `;
+           <div id="anime-${index}" class="anime-card-container">
+     <li class="AnimeName" 
+      data-aos="fade-right" 
+      data-aos-duration="400" 
+      data-aos-easing="ease-in-out" 
+      data-aos-delay="50"><strong>${anime.title}</strong></li>
+
+    <ul data-aos="fade-left" 
+      data-aos-duration="400" 
+      data-aos-easing="ease-in-out" 
+      data-aos-delay="50">
+        <li>Genre: ${anime.genre}</li>
+        <li>Aired: ${anime.aired}</li>
+        <li>Rating: ${anime.rating}</li>
+        <li>Duration per Episode: ${anime.duration}</li>
+        <li>Studio: ${anime.studio}</li>
+  </ul>
+  <a href="${anime.trailerUrl}" target="_blank">
+    <img class="anime-card" 
+         src="${anime.imageUrl}" 
+         alt="${anime.title} image" 
+         width="700" 
+         data-aos="fade-right"  
+         data-aos-duration="400" 
+         data-aos-easing="ease-in-out"
+         data-aos-delay="50">
+    <div class="play-overlay">Watch Trailer</div>
+  </a>
+  <p class="anime-description"><b>Story: </b>${anime.description}</p>
+  <p>
+    <a href="${anime.imdbUrl}" target="_blank">IMDb</a> | 
+    <a href="${anime.malUrl}" target="_blank">MyAnimeList</a>
+    <br>
+  </p>
+</div>
+       `;
         animeListContainer.innerHTML += animeHtml;
       });
     })
