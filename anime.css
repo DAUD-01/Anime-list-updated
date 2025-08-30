@@ -68,6 +68,7 @@ a:hover { color: var(--anker-hover-light); }
 .AnimeName {
   color: var(--highlight-light);
   font-size: 1.5rem;
+  box-sizing: border-box;  
 }
 
 .anime-description {
