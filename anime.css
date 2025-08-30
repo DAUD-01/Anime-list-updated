@@ -314,6 +314,7 @@ body.dark-mode #Go-up a { color: white; }
   box-shadow:0 8px 18px rgba(0,0,0,.25);
 }
 .anime-card-container a:hover .play-overlay{opacity:1}
+
 /* RESPONSIVE */
 @media (max-width: 500px) {
   .top-bar { display: block; margin-top: 10px; }
