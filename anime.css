@@ -321,8 +321,11 @@ body.dark-mode #Go-up a { color: white; }
     font-weight: 500;
   }
   .AnimeName {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
   }
+  .anime-description {
+      font-size: 12px
+  }  
   ul li {
       font-size: 1rem;
   }
