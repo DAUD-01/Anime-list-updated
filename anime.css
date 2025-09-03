@@ -84,8 +84,11 @@ a:hover { color: var(--anker-hover-light); }
 ul {
   margin: 10px 0;
   padding-left: 0;
-  list-style-type: circle;
+  list-style-type: none;
   font-size: 1.1rem;
+}
+  ul li {
+       color: var(--an-description-light);
 }
 
 /* HEADER + NAV */
@@ -237,7 +240,7 @@ body.dark-mode h1 {
   border-bottom: 2px solid var(--highlight-dark);
 }
 body.dark-mode .anime-description { color: var(--an-description-dark); }
-body.dark-mode ul { list-style-type: circle; }
+body.dark-mode ul li {  color: var(--an-description-dark);  }
 body.dark-mode img { border-color: rgba(255, 255, 255, 0.2); }
 body.dark-mode footer {
   background-color: var(--footer-bg-color-dark);
@@ -315,7 +318,7 @@ body.dark-mode #Go-up a { color: white; }
       font-size: 12px
   }  
   ul li {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
   }
   .anime-card-container {
       padding: 0;
