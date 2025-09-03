@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
       data-aos-duration="400" 
       data-aos-easing="ease-in-out" 
       data-aos-delay="50">
-        <li>Genre: ${anime.genre}</li>
-        <li>Aired: ${anime.aired}</li>
-        <li>Rating: ${anime.rating}</li>
-        <li>Duration per Episode: ${anime.duration}</li>
-        <li>Studio: ${anime.studio}</li>
+        <li><b>Genre:</b> ${anime.genre}</li>
+        <li><b>Aired:</b> ${anime.aired}</li>
+        <li><b>Rating:</b> ${anime.rating}</li>
+        <li><b>Duration per Episode:</b> ${anime.duration}</li>
+        <li><b>Studio:</b> ${anime.studio}</li>
   </ul>
   <a href="${anime.trailerUrl}" target="_blank">
     <img class="anime-card" 
