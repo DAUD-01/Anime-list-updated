@@ -41,6 +41,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', "Serif";
   background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease-in;  
 }
 
 /* TYPOGRAPHY */
@@ -227,6 +228,7 @@ footer {
 body.dark-mode {
   background-color: var(--bg-color-dark);
   color: var(--body-color-dark);
+  transition: background-color 0.3s ease-in;  
 }
 
 body.dark-mode h1 {
