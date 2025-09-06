@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </p>
 </div>
        `;
-        animeListContainer.insertAdjacentHTML("beforeend", animeHtml);
+// animeListContainer.innerHtml += animeHtml;        animeListContainer.insertAdjacentHTML("beforeend", animeHtml);
 });
 
     })
