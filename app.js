@@ -48,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
   </p>
 </div>
        `;
-        animeListContainer.innerHTML += animeHtml;
-      });
+        animeListContainer.insertAdjacentHTML("beforeend", animeHtml);
+});
+
     })
     .catch(err => console.error("Error loading JSON:", err));
 });
