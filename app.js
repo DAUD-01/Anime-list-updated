@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
          data-aos-duration="400" 
          data-aos-easing="ease-in-out"
          data-aos-delay="50">
-    <div class="play-overlay">Watch Trailer</div>
+    <div class="play-overlay"></div>
   </a>
   <p class="anime-description"><b>Story: </b>${anime.description}</p>
   <p>
