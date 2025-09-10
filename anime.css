@@ -464,9 +464,10 @@ body.dark-mode #header-line a { color: lavenderblush; }
   background-color: none;
  }
  #anime-list {
-      display: grid;
+      /*display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 20px;
+      gap: 20px;*/
+      display: block;
       padding: 20px;
  }
  .anime-card-container{
