@@ -30,9 +30,9 @@
 
 }
 
-/*html, body {
+html, body {
   overflow-x: hidden;
-}*/
+}
 
 /* GLOBAL / RESET */
 html { scroll-behavior: smooth; }
@@ -93,7 +93,8 @@ a:hover { color: var(--anker-hover-light); }
   line-height: 25px;
   text-transform: capitalize;
   display: -webkit-box;
-  -webkit-line-clamp: 4;   /* only 4 lines visible */
+ -webkit-line-clamp: 4;   /* only 4 lines visible */
+  line-clamp: 4;           /* standard property for compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
   overflow: hidden;
