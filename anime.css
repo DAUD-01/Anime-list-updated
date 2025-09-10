@@ -30,9 +30,9 @@
 
 }
 
-html, body {
+/*html, body {
   overflow-x: hidden;
-}
+}*/
 
 /* GLOBAL / RESET */
 html { scroll-behavior: smooth; }
