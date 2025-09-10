@@ -471,7 +471,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
       padding: 20px;
  }
  .anime-card-container{
-  margin-left: -15px; 
+  /*margin-left: -15px; */
  }
 #sub-top-bar {
   display: flex;
