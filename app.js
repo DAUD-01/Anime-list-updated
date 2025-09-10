@@ -1,123 +1,492 @@
-const animeListContainer = document.getElementById('anime-list');
-const searchInput = document.getElementById('anime-input');
-const searchButton = document.getElementById('search-button');
-let animeData = []; // global variable
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Setting up colors */
+:root {
+    --bg-color-light: whitesmoke; 
+    --h1-bg-light: hsl(0, 0%, 50%); 
+    --h1-color: #f5f5f5; 
+    --p-color: gray;
+    --trailer-text-light: #444444; 
+    --trailer-text-hover-light: #5c6cff;
+    --highlight-light: navy;  
+    --anker-light: #5c6cff;        
+    --anker-hover-light: #9d6bff;  
+    --an-description-light: #4a4a5e; 
+    --header-line-anker: black;
+    --footer-bg-color-light: lavender;
+    --footer-links-light: hsl(0, 0%, 20%);
+    /* Dark mode colors */
+    --bg-color-dark: black;
+    --body-color-dark: #e0e0e0;
+    --h1-bg-dark: hsl(0, 0%, 20%);
+    --trailer-text-dark: #dddddd;
+    --trailer-text-hover-dark: #9d6bff;
+    --highlight-dark:  hsl(240, 100%, 65%);
+    --anker-dark: #4a4fff;         
+    --anker-hover-dark: #b388ff;   
+    --an-description-dark: #a5a5c5;    
+    --footer-bg-color-dark: #312c2cb0; 
+    --footer-links-dark: hsl(0, 0%, 65%);
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch("animeData.json")
-    .then(res => res.json())
-    .then(data => {
-      animeData = data; // save fetched data globally
-      const animeListContainer = document.getElementById("anime-list");
-
-      animeData.forEach((anime, index) => {
-        const animeHtml = `
-<div id="anime-${index}" class="anime-card-container">
-
-  <a href="${anime.trailerUrl}" target="_blank" class="anime-image">
-    <img class="anime-card" 
-         src="${anime.imageUrl}" 
-         alt="${anime.title} image" 
-         width="700"
-         data-aos="fade-right"  
-         data-aos-duration="400" 
-         data-aos-easing="ease-in-out"
-         data-aos-delay="50">
-    <div class="play-overlay"></div>
-  </a>
-
-  <!-- Title -->
-  <li class="AnimeName"
-      data-aos="fade-right" 
-      data-aos-duration="400" 
-      data-aos-easing="ease-in-out" 
-      data-aos-delay="50">
-    <strong> ${index + 1}. ${" "}  ${anime.title}</strong>
-  </li>
-
-  <!-- Specs -->
-  <ul class="Anime-specs"
-      data-aos="fade-left" 
-      data-aos-duration="400" 
-      data-aos-easing="ease-in-out" 
-      data-aos-delay="50">
-    <li><b>Genre:</b> ${anime.genre}</li>
-    <li><b>Aired:</b> ${anime.aired}</li>
-    <li><b>Rating:</b> ${anime.rating}</li>
-    <li><b>Duration:</b> ${anime.duration}</li>
-    <li><b>Studio:</b> ${anime.studio}</li>
-  </ul>
-
-  <!-- Story -->
-    <p class="anime-description" id="desc-${index}">
-      <b>Story: </b>${anime.description}
-    </p>
-    <button class="read-more" data-id="${index}">Read More</button>
-
-
-  <!-- Links -->
-  <p class="anime-links">
-    <a href="${anime.imdbUrl}" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-imdb-logo-icon-svg-png-download-461804.png" alt="IMDB" style="width:40px; height:auto;"></a> 
-    <a href="${anime.malUrl}" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/MyAnimeList_favicon.svg" alt="My Anime List" style="width:40px; height:auto;"></a> 
-  </p>
-</div>
-       `;
-// animeListContainer.innerHtml += animeHtml;       
- animeListContainer.insertAdjacentHTML("beforeend", animeHtml);
-});
-
-    })
-    .catch(err => console.error("Error loading JSON:", err));
-});
-  // Search Anime 
-function searchAnime(e) {
-  e.preventDefault(); // prevent deafult mean prevent from reloading page on search
-  const query = searchInput.value.toLowerCase().trim();
-  const index = animeData.findIndex(anime =>
-    anime.title.toLowerCase().includes(query)
-  );
-  if (index !== -1) {
-    const target = document.getElementById(`anime-${index}`);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-       target.style.boxShadow = "0 0 25px 8px hsl(240, 100%, 65%)";
-       setTimeout(() => target.style.boxShadow = "", 2000); // remove after 2s
-      }
-  } else { alert("⚠️ No Anime Found!"); } 
 }
-searchButton.addEventListener("click", searchAnime);
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* GLOBAL / RESET */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', "Serif";
+  background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease-in;  
+}
+#random-button{
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;  
+  fill: gray;
+} 
+#random-button:hover {
+  fill: #4a4fff !important;
+}
+/* TYPOGRAPHY */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--h1-color);
+  background: var(--h1-bg-light);
+  padding: 20px 0;
+  margin-top: 20px;
+  border-bottom: 2px solid var(--highlight-light);
+  border-radius: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease-in; 
+}
+
+p { color: var(--p-color); transition: color 0.3s ease-in; }
+
+a {
+  text-decoration: none;
+  color: var(--anker-light);
+}
+a:hover { color: var(--anker-hover-light); }
+
+.AnimeName {
+  color: var(--highlight-light);
+  font-size: 1.5rem;
+  box-sizing: border-box;  
+  font-weight: 700;  
+  list-style: none;
+  margin-top: 10px;
+  transition: color 0.3s ease-in; 
+}
+
+.anime-description {
+  margin: 20px 0;
+  font-size: 13.5px;
+  color: var(--an-description-light);
+  line-height: 25px;
+  text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;   /* only 4 lines visible */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in; 
+
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 1.1rem;
+}
+  ul li {
+       color: var(--an-description-light);
+       transition: color 0.3s ease-in; 
+}
+ #anime-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      padding: 20px;
+ }
+ .anime-card-container{
+   background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  padding: 20px;
+  transition: background 0.3s ease-in; 
+ }
+ .AnimeName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--highlight-light);
+  transition: color 0.3s ease-in; 
+}
+.Anime-specs {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  color: var(--p-color);
+  transition: color 0.3s ease-in; 
+}
+.Anime-specs li { margin: 4px 0; }
+.anime-description {
+  font-size: 0.9rem;
+  color: var(--an-description-light);
+  transition: color 0.3s ease-in; 
+  margin: 12px 0;
+}
+/* Formatting Read More Button */
+.read-more {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--highlight-dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: var(--highlight-light);
+}
+
+.read-more:active {
+  transform: scale(1.05);
+}
 
 
-// To Add the Read More/Less Button
+.anime-links a {
+  font-weight: 600;
+  color: var(--anker-light);
+}
+.anime-links a:hover { color: var(--anker-hover-light); }
+/* HEADER + NAV */
+#header-line {
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-bottom: 2px solid var(--highlight-light);
+}
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("read-more")) {
-    const id = e.target.getAttribute("data-id");
-    const desc = document.getElementById(`desc-${id}`);
+#header-line a {
+  color: var(--header-line-anker);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
 
-    if (desc.classList.contains("expanded")) {
-      desc.classList.remove("expanded");
-      desc.style.webkitLineClamp = "4";  // back to 4 lines
-      e.target.textContent = "Read More";
-    } else {
-      desc.classList.add("expanded");
-      desc.style.webkitLineClamp = "unset";  // show full text
-      e.target.textContent = "Read Less";
-    }
+#header-line a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background: var(--highlight-dark);
+  transition: width 0.3s ease;
+}
+
+#header-line a:hover::after { width: 100%; }
+
+/* TOP BAR (Dark mode toggle + Search) */
+
+#theme-toggle,
+#random-button {
+  margin-right: 10px; /* spacing between icons */
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+/* Dark Mode Moon Button */
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+#theme-toggle svg:hover {
+  fill: #4a4fff !important;
+}
+form {
+  display: flex;
+  width: 50%;
+  max-width: 400px;
+  position: relative;
+  margin-left: auto; /* push to the right */
+  align-items: center;
+}
+#anime-input {
+  padding: 12px 20px;
+  width: 100%;
+  background: none;
+  border: 2px solid gray;
+  border-radius: 100px;
+  font: inherit;
+  color: var(--p-color);
+  caret-color: var(--highlight-light);
+  flex: 1;
+}
+#anime-input:focus {
+  outline: none;
+  border: 1px solid #6a5acd;
+  box-shadow: 0 0 8px 2px rgba(106, 90, 205, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+#search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--highlight-light);
+  padding: 0 25px;
+  height: 100%;
+  border: none;
+  border-radius: 100px;
+  font: inherit;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--footer-bg-color-light);
+  padding: 40px 20px;
+  text-align: left;
+  width: 100vw;
+}
+/* Designing Footer */
+#footer-text { 
+    color: black;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+ }
+#links { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 10px 20px;
+    line-height: 1.8;
+}
+#links a {
+    color: var(--footer-links-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#links a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+.below {
+  color: var(--trailer-text-light);
+}
+.below:hover {
+  color: var(--trailer-text-hover-light);
+}
+/* DARK MODE */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--body-color-dark);
+  transition: background-color 0.3s ease-in;  
+}
+
+body.dark-mode h1 {
+  background-color: var(--h1-bg-dark);
+  color: var(--h1-color);
+  border-bottom: 2px solid var(--highlight-dark);
+  transition: background-color 0.3s ease-in; 
+  transition: color 0.3s ease-in; 
+}
+body.dark-mode .anime-card-container{
+   background: hsl(0, 0%, 5%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  padding: 20px;
+  transition: background-color 0.3s ease-in; 
+ }
+body.dark-mode .anime-description { color: var(--an-description-dark); transition: color 0.3s ease-in; }
+body.dark-mode ul li {  color: var(--an-description-dark); transition: color 0.3s ease-in;  }
+body.dark-mode img { border-color: rgba(255, 255, 255, 0.2); transition: color 0.3s ease-in; }
+body.dark-mode footer {
+  background-color: var(--footer-bg-color-dark);
+  color: white;
+  transition: background-color 0.3s ease-in; 
+  transition: color 0.3s ease-in; 
+}
+body.dark-mode #links a {
+    color: var(--footer-links-dark);
+    transition: color 0.3s ease-in; 
+}
+
+body.dark-mode a { color: var(--anker-dark); }
+body.dark-mode a:hover { color: var(--anker-hover-dark); }
+body.dark-mode .AnimeName {
+  color: var(--highlight-dark);
+  transition: color 0.3s ease-in; 
+}
+body.dark-mode #search-button { background-color: var(--highlight-dark); transition: background-color 0.3s ease-in; }
+body.dark-mode #anime-input { caret-color: var(--highlight-dark); }
+body.dark-mode #footer-text { color: white; transition: color 0.3s ease-in; }
+body.dark-mode #header-line { border-bottom: 2px solid var(--highlight-dark); transition: border-bottom 0.3s ease-in; }
+body.dark-mode #header-line a { color: lavenderblush; }
+
+/* Make anime card show play button when hover */
+.play-overlay{
+  position: absolute; inset:0;
+  display:flex; flex-direction:column; 
+  gap:12px;
+  align-items:center;  
+  justify-content:center;
+  opacity:0; 
+  z-index:2; 
+  pointer-events:none;
+  font-weight:600; font-size:1.7rem;
+  color:#fff;
+  transition:opacity .25s ease-in;
+}
+.play-overlay::before{
+  content:""; 
+  display:flex; align-items:center; justify-content:center;
+  width:100px; height:100px; border-radius:50%;
+  background-color:hsla(240, 100%, 65%, 0.70); /* Semi-transparent background */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff"><path d="M8 5v14l11-7z"/></svg>'); /* Embedded SVG */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60px; /* Adjust the size of the play icon */
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+.anime-card-container a {
+  position: relative; /* make overlay relative to the image (a) */
+  display: inline-block;  
+}
+
+.anime-card-container a:hover .play-overlay{
+  opacity:1;
+  backdrop-filter: blur(2px);
+}
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .top-bar { display: block; margin-top: 10px; }
+  form { width: 100%; margin-top: 15px; }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 12px 5px;
+    margin-top: 12px;
   }
-});
-
-// Random anime selection 
-
-const randomButton = document.getElementById("random-button");
-
-randomButton.addEventListener("click", () => {
-  if (animeData.length > 0) {
-    const randomIndex = Math.floor(Math.random() * animeData.length);
-    const target = document.getElementById(`anime-${randomIndex}`);
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-    target.style.boxShadow = "0 0 25px 8px hsl(240, 100%, 65%)";
-    setTimeout(() => target.style.boxShadow = "", 2000); // remove after 2s
+  #search-button {
+    padding: 0 20px;
+    border-radius: 100px;
+    font-weight: 500;
   }
-});
+  .AnimeName {
+      font-size: 1.3rem;
+  }
+  .anime-description {
+      font-size: 12px
+  }  
+  ul li {
+      font-size: 0.95rem;
+  }
+  .anime-card-container {
+      padding: 0;
+      margin: 0;
+  }
+  #anime-list {
+      list-style: none;
+      padding-left: 1.4rem; 
+      margin: 0; 
+  }       
+  #links { 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));   
+    line-height: 2;
+}
+ .play-overlay{
+      gap:8px;
+      font-size:1.3rem;
+} 
+  .play-overlay::before{
+      width:70px; height:70px;
+      background-size: 40px; /* Adjust the size of the play icon */
+} 
+ .anime-card-container{
+  box-shadow: none; 
+  background-color: none;
+ }
+ #anime-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      padding: 20px;
+ }
+ .anime-card-container{
+  margin-left: -15px; 
+ }
+#sub-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  
+}
+
+}
+
+
+
+
+
+
+
+
+
