@@ -12,39 +12,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
       animeData.forEach((anime, index) => {
         const animeHtml = `
-           <div id="anime-${index}" class="anime-card-container">
-     <li class="AnimeName" 
-      data-aos="fade-right" 
-      data-aos-duration="400" 
-      data-aos-easing="ease-in-out" 
-      data-aos-delay="50"><strong>${anime.title}</strong></li>
+<div id="anime-${index}" class="anime-card-container">
 
-    <ul data-aos="fade-left" 
-      data-aos-duration="400" 
-      data-aos-easing="ease-in-out" 
-      data-aos-delay="50">
-        <li><b>Genre:</b> ${anime.genre}</li>
-        <li><b>Aired:</b> ${anime.aired}</li>
-        <li><b>Rating:</b> ${anime.rating}</li>
-        <li><b>Duration per Episode:</b> ${anime.duration}</li>
-        <li><b>Studio:</b> ${anime.studio}</li>
-  </ul>
-  <a href="${anime.trailerUrl}" target="_blank">
+  <a href="${anime.trailerUrl}" target="_blank" class="anime-image">
     <img class="anime-card" 
          src="${anime.imageUrl}" 
          alt="${anime.title} image" 
-         width="700" 
+         width="700"
          data-aos="fade-right"  
          data-aos-duration="400" 
          data-aos-easing="ease-in-out"
          data-aos-delay="50">
     <div class="play-overlay"></div>
   </a>
-  <p class="anime-description"><b>Story: </b>${anime.description}</p>
-  <p>
-    <a href="${anime.imdbUrl}" target="_blank">IMDb</a> | 
-    <a href="${anime.malUrl}" target="_blank">MyAnimeList</a>
-    <br>
+
+  <!-- Title -->
+  <li class="AnimeName"
+      data-aos="fade-right" 
+      data-aos-duration="400" 
+      data-aos-easing="ease-in-out" 
+      data-aos-delay="50">
+    <strong> ${index + 1}. ${" "}  ${anime.title}</strong>
+  </li>
+
+  <!-- Specs -->
+  <ul class="Anime-specs"
+      data-aos="fade-left" 
+      data-aos-duration="400" 
+      data-aos-easing="ease-in-out" 
+      data-aos-delay="50">
+    <li><b>Genre:</b> ${anime.genre}</li>
+    <li><b>Aired:</b> ${anime.aired}</li>
+    <li><b>Rating:</b> ${anime.rating}</li>
+    <li><b>Duration:</b> ${anime.duration}</li>
+    <li><b>Studio:</b> ${anime.studio}</li>
+  </ul>
+
+  <!-- Story -->
+    <p class="anime-description" id="desc-${index}">
+      <b>Story: </b>${anime.description}
+    </p>
+    <button class="read-more" data-id="${index}">Read More</button>
+
+
+  <!-- Links -->
+  <p class="anime-links">
+    <a href="${anime.imdbUrl}" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-imdb-logo-icon-svg-png-download-461804.png" alt="IMDB" style="width:40px; height:auto;"></a> 
+    <a href="${anime.malUrl}" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/MyAnimeList_favicon.svg" alt="My Anime List" style="width:40px; height:auto;"></a> 
   </p>
 </div>
        `;
@@ -66,7 +80,44 @@ function searchAnime(e) {
     const target = document.getElementById(`anime-${index}`);
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+       target.style.boxShadow = "0 0 25px 8px hsl(240, 100%, 65%)";
+       setTimeout(() => target.style.boxShadow = "", 2000); // remove after 2s
       }
   } else { alert("⚠️ No Anime Found!"); } 
 }
 searchButton.addEventListener("click", searchAnime);
+
+
+// To Add the Read More/Less Button
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("read-more")) {
+    const id = e.target.getAttribute("data-id");
+    const desc = document.getElementById(`desc-${id}`);
+
+    if (desc.classList.contains("expanded")) {
+      desc.classList.remove("expanded");
+      desc.style.webkitLineClamp = "4";  // back to 4 lines
+      e.target.textContent = "Read More";
+    } else {
+      desc.classList.add("expanded");
+      desc.style.webkitLineClamp = "unset";  // show full text
+      e.target.textContent = "Read Less";
+    }
+  }
+});
+
+// Random anime selection 
+
+const randomButton = document.getElementById("random-button");
+
+randomButton.addEventListener("click", () => {
+  if (animeData.length > 0) {
+    const randomIndex = Math.floor(Math.random() * animeData.length);
+    const target = document.getElementById(`anime-${randomIndex}`);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    target.style.boxShadow = "0 0 25px 8px hsl(240, 100%, 65%)";
+    setTimeout(() => target.style.boxShadow = "", 2000); // remove after 2s
+  }
+});
