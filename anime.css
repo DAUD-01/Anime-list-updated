@@ -438,8 +438,8 @@ body.dark-mode #header-line a { color: lavenderblush; }
       font-size: 0.95rem;
   }
   .anime-card-container {
-      padding: 0;
-      margin: 0;
+      padding: 2px;
+      margin-bottom: 5px;
   }
   #anime-list {
       list-style: none;
@@ -467,7 +467,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 20px;*/
       display: block;
-      padding: 20px;
+      padding: 10px;
  }
  .anime-card-container{
   /*margin-left: -15px; */
