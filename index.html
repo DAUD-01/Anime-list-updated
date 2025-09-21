@@ -1,14 +1,28 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Explore the ultimate anime list with detailed ratings, genres, and episode guides. Discover popular, trending, and classic anime all in one place.">
-  <meta name="keywords" content="anime list, anime database, best anime, watch anime, anime reviews, trending anime, popular anime, new anime, top anime, anime episodes, anime ratings, shonen, shojo, action anime, adventure anime, fantasy anime, manga adaptation, anime series, top anime list, Dawvix list, colamastashian">
-  <meta name="author" content="Dawvix">  <!-- Open Graph -->  <meta property="og:title" content="My Anime List - Complete Anime Database">
+  <meta name="keywords" content="anime list, anime database, best anime, watch anime, anime reviews, trending anime, popular anime, new anime, top anime, anime episodes, anime ratings, shonen, shojo, action anime, adventure anime, fantasy anime, manga adaptation, anime series, top anime list, Dawvix list,colamastashian">
+  <meta name="author" content="Dawvix">
+  <!-- Social Sharing / Open Graph -->
+  <meta property="og:title" content="My Anime List - Complete Anime Database">
   <meta property="og:description" content="See the anime series most popular and best ones.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dawvix-anime-list.netlify.app/">  <!-- Robots -->  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">  <!-- Viewport -->  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Favicon -->  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6819/6819062.png">  <!-- Styles -->  <link rel="stylesheet" href="anime.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">  <!-- Scripts -->  <script src="app.js" defer></script>  <title>Anime List I've Watched - Dawvix</title>
+  <meta property="og:url" content="https://dawvix-anime-list.netlify.app/">
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5084/5084059.png" type="image/png">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6819/6819062.png" type="image/png">
+  
+  <link rel="stylesheet" href="anime.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="app.js" defer></script>
+  <title>Anime List I've Watched - Dawvix</title>
 </head>
 <body>
   <header data-aos="fade-out">
@@ -16,41 +30,42 @@
       <a href="#">Home</a>
       <a href="#">Genres</a>
       <a href="#">About</a>
-    </nav><h1>Anime Series I've Watched</h1>
+    </nav>
+    <h1>Anime Series I've watched</h1>
+    <div class="top-bar">
+      <!-- Dark mode button -->
+      <div id="sub-top-bar">
+        <button id="theme-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="gray">
+            <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/>
+          </svg>
+        </button>
+        <button id="random-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px">
+            <path d="M300.08-246.67q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm0-360q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm180 180q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm180 180q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm0-360q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5ZM186.67-120q-27 0-46.84-19.83Q120-159.67 120-186.67v-586.66q0-27 19.83-46.84Q159.67-840 186.67-840h586.66q27 0 46.84 19.83Q840-800.33 840-773.33v586.66q0 27-19.83 46.84Q800.33-120 773.33-120H186.67Zm0-66.67h586.66v-586.66H186.67v586.66Z"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Search bar -->
+      <form>
+        <input id="anime-input" type="text" placeholder="Search the Anime..." autocomplete="off">
+        <button id="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="white">
+            <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </header>
 
-<div class="top-bar">
-  <div id="sub-top-bar">
-    <!-- Dark mode button -->
-    <button id="theme-toggle">
-      <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="gray">
-        <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/>
-      </svg>
-    </button>
-    
-    <!-- Random button -->
-    <button id="random-button">
-      <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px">
-        <path d="M300.08-246.67q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm0-360q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm180 180q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm180 180q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5Zm0-360q22.25 0 37.75-15.58 15.5-15.57 15.5-37.83 0-22.25-15.58-37.75-15.57-15.5-37.83-15.5-22.25 0-37.75 15.58-15.5 15.57-15.5 37.83 0 22.25 15.58 37.75 15.57 15.5 37.83 15.5ZM186.67-120q-27 0-46.84-19.83Q120-159.67 120-186.67v-586.66q0-27 19.83-46.84Q159.67-840 186.67-840h586.66q27 0 46.84 19.83Q840-800.33 840-773.33v586.66q0 27-19.83 46.84Q800.33-120 773.33-120H186.67Zm0-66.67h586.66v-586.66H186.67v586.66Z"/>
-      </svg>
-    </button>
+  <div id="center">
+    <ol id="anime-list"></ol>
   </div>
 
-  <!-- Search bar -->
-  <form>
-    <input id="anime-input" type="text" placeholder="Search the Anime..." autocomplete="off">
-    <button id="search-button">
-      <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="white">
-        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-      </svg>
-    </button>
-  </form>
-</div>
-
-  </header>  <main id="center">
-    <ol id="anime-list"></ol>
-  </main>  <!-- Footer -->  <footer>
-    <p id="footer-text">© 2025 Dawvix. All rights reserved.</p>
-    <nav id="links">
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">© 2025 Dawvix. All rights reserved.</p><br>
+    <p id="links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
       <a href="#">Cookie Policy</a>
@@ -59,29 +74,38 @@
       <a href="#">Contact Us</a>
       <a href="#">FAQs</a>
       <a href="#">Help Center</a>
+      <a href="#">Web Development</a>
+      <a href="#">App Development</a>
+      <a href="#">Design</a>
       <a href="#">Support</a>
       <a href="#">Feedback</a>
-    </nav>
-  </footer>  <!-- Scripts -->  <script>
-    // Dark mode toggle with state saving
+      <a href="#">Partnerships</a>
+      <a href="#">Guidelines</a>
+    </p>
+  </footer>
+
+  <script>
+    // JavaScript to toggle dark mode
     const toggleButton = document.getElementById("theme-toggle");
     toggleButton.addEventListener("click", function() {
       document.body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
     });
+  </script>
 
-    // Load saved theme
-    window.addEventListener("DOMContentLoaded", () => {
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-      }
-      document.body.classList.add("loaded");
-    });
-
-    // Initialize AOS
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
     AOS.init();
-  </script>  <!-- Hide until loaded -->  <style>
+  </script>
+
+  <!-- Loader fix -->
+  <style>
     body { visibility: hidden; }
     body.loaded { visibility: visible; }
-  </style></body>
+  </style>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
 </html>
