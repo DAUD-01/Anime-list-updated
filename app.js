@@ -49,7 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
   </ul>
 
   <!-- Story -->
-    <p class="anime-description" id="desc-${index}">
+    <p class="anime-description"     id="desc-${index
+         data-aos="fade"  
+         data-aos-duration="200" 
+         data-aos-easing="ease-in-out"
+}">
       <b>Story: </b>${anime.description}
     </p>
     <button class="read-more" data-id="${index}">Read More</button>
