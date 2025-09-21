@@ -180,8 +180,7 @@ ul {
 
 
 .anime-links a {
-  font-weight: 600;
-  color: var(--anker-light);
+   border: none;
 }
 .anime-links a:hover { color: var(--anker-hover-light); }
 /* HEADER + NAV */
