@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* Setting up colors */
 :root {
-    --bg-color-light: whitesmoke; 
+    /*--bg-color-light: whitesmoke; 
     --h1-bg-light: hsl(0, 0%, 50%); 
     --h1-color: #f5f5f5; 
     --p-color: gray;
@@ -26,7 +26,35 @@
     --anker-hover-dark: #b388ff;   
     --an-description-dark: #a5a5c5;    
     --footer-bg-color-dark: #312c2cb0; 
-    --footer-links-dark: hsl(0, 0%, 65%);
+    --footer-links-dark: hsl(0, 0%, 65%);*/
+
+/* Light mode colors - Wild */
+--bg-color-light: #fffbef; /* soft banana cream chaos */
+--h1-bg-light: linear-gradient(90deg, #ff00ff, #00ffff); 
+--h1-color: #ff3c00; /* punch-in-the-face orange */
+--p-color: #1f0033; /* sinister purple for text */
+--trailer-text-light: #ff1493; /* hot pink flex */
+--trailer-text-hover-light: #00ff9d; /* electric mint shock */
+--highlight-light: #ff0000; /* screaming red */
+--anker-light: #ff9900; /* radioactive mango */
+--anker-hover-light: #00ffea; /* cyber aqua */
+--an-description-light: #8b00ff; /* royal insanity purple */
+--header-line-anker: #ff007f; /* flamingo blood */
+--footer-bg-color-light: #ffe600; /* highlighter yellow */
+--footer-links-light: #ff4500; /* burnt neon orange */
+
+/* Dark mode colors - Wild */
+--bg-color-dark: #0a002b; /* abyss with caffeine */
+--body-color-dark: #ffeb3b; /* glaring neon yellow */
+--h1-bg-dark: linear-gradient(270deg, #39ff14, #ff073a); 
+--trailer-text-dark: #ff69b4; /* bubblegum scream */
+--trailer-text-hover-dark: #39ff14; /* toxic lime glow */
+--highlight-dark: #00e5ff; /* liquid cyan laser */
+--anker-dark: #ff00ff; /* magenta slap */
+--anker-hover-dark: #00ffcc; /* neon wave */
+--an-description-dark: #ff007f; /* candy carnage pink */
+--footer-bg-color-dark: #1a0033; /* nightclub void */
+--footer-links-dark: #ffdd00; /* radioactive gold */
 
 }
 
