@@ -17,7 +17,7 @@
     --footer-links-light: hsl(0, 0%, 20%);
     /* Dark mode colors */
     --bg-color-dark: black;
-    --body-color-dark: #e0e0e0;
+    --body-color-dark: black;
     --h1-bg-dark: hsl(0, 0%, 20%);
     --trailer-text-dark: #dddddd;
     --trailer-text-hover-dark: #9d6bff;
