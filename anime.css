@@ -152,14 +152,16 @@ ul {
   font-size: 0.9rem;
   color: var(--an-description-light);
   transition: color 0.3s ease-in; 
-  margin: 12px 0;
+  margin: 12px 12px 12px 12px !important;
+  text-align: justify;
 }
 /* Formatting Read More Button */
 .read-more {
   display: inline-block !important;
   width: auto !important;
   max-width: fit-content !important;
-  padding: 6px 10px;
+  padding: 6px 10px !important;
+  margin-left: 12px;
   font-size: 14px;
   font-weight: 500;
   color: white;
@@ -460,6 +462,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
  .anime-card-container{
   box-shadow: none; 
   background-color: none;
+  padding: 40px;
  }
  #anime-list {
       /*display: grid;
@@ -479,6 +482,17 @@ body.dark-mode #header-line a { color: lavenderblush; }
   padding: 10px;
   
 }
+
+}
+
+/* Adding Padding to the Elements of Card */
+
+#CardEl{
+  padding: 0px 10px 0px 10px;
+}
+.linkEl:hover{
+  transform: scale(1.1);
+  transition: 0.2s linear;
 
 }
 
