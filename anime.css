@@ -153,7 +153,6 @@ ul {
   color: var(--an-description-light);
   transition: color 0.3s ease-in; 
   margin: 12px 12px 12px 12px !important;
-  text-align: justify;
 }
 /* Formatting Read More Button */
 .read-more {
