@@ -61,7 +61,7 @@ h1 {
   color: var(--h1-color);
   background: var(--h1-bg-light);
   padding: 20px 0;
-  margin-top: 20px;
+  margin-top: -20px;
   border-bottom: 2px solid var(--highlight-light);
   border-radius: 10px;
   width: 100%;
@@ -93,10 +93,9 @@ a:hover { color: var(--anker-hover-light); }
   line-height: 25px;
   text-transform: capitalize;
   display: -webkit-box;
- -webkit-line-clamp: 4;   /* only 4 lines visible */
-  line-clamp: 4;           /* standard property for compatibility */
+ -webkit-line-clamp: 4;   
+  line-clamp: 4;           
   -webkit-box-orient: vertical;
-  overflow: hidden;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
@@ -422,7 +421,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
     font-size: 1.8rem;
     font-weight: 500;
     padding: 12px 5px;
-    margin-top: 12px;
+    /* margin-top: 12px; */
   }
   #search-button {
     padding: 0 20px;
