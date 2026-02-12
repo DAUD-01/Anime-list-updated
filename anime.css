@@ -482,6 +482,12 @@ body.dark-mode #header-line a { color: lavenderblush; }
   padding: 10px;
   
 }
+#CardEl{
+  padding: 0;
+}
+.anime-card-container{
+  padding: 0;
+}
 
 }
 
