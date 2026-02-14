@@ -500,6 +500,13 @@ body.dark-mode #header-line a { color: lavenderblush; }
 
 }
 
+.anime-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+
 
 
 

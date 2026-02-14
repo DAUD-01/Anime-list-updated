@@ -15,14 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="anime-${index}" class="anime-card-container">
 
   <a href="${anime.trailerUrl}" target="_blank" class="anime-image">
-    <img class="anime-card" 
-         src="${anime.imageUrl}" 
-         alt="${anime.title} image" 
-         width="700"
-         data-aos="fade-left"  
-         data-aos-duration="400" 
-         data-aos-easing="ease-in-out"
-         data-aos-delay="50">
+  <img class="anime-card"
+        src="${anime.imageUrl}"
+        alt="${anime.title} image"
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+        data-aos="fade-left"
+        data-aos-duration="400"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="50">
+
     <div class="play-overlay"></div>
   </a>
 
