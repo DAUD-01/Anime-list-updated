@@ -29,14 +29,12 @@ The project started as a basic HTML website. Later, I enhanced it with **CSS** a
 
 ## Installation
 
-1. Clone the repository:
-
-git clone <repo-url>
-Open the project in VS Code or any code editor
-Open index.html in your browser
+1. Clone the repository
+2. Open the project in VS Code or any code editor
+3. Open index.html in your browser
 
 You can also view the live version here:
-Live URL (https://dawvix-anime-list.netlify.app/)
+Live URL **(https://dawvix-anime-list.netlify.app/)**
 
 ## Technologies Used
 
