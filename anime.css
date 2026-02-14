@@ -469,9 +469,6 @@ body.dark-mode #header-line a { color: lavenderblush; }
       display: block;
       padding: 5px;
  }
- .anime-card-container{
-  /*margin-left: -15px; */
- }
 #sub-top-bar {
   display: flex;
   justify-content: space-between;
@@ -489,17 +486,19 @@ body.dark-mode #header-line a { color: lavenderblush; }
 
 }
 
-/* Adding Padding to the Elements of Card */
+/* Adding Padding to the Elements of Card excpet image*/
 
 #CardEl{
   padding: 0px 10px 0px 10px;
 }
+
+/* making imdb and mal links expand when hover */
 .linkEl:hover{
   transform: scale(1.1);
   transition: 0.2s linear;
 
 }
-
+/* adjusting aspect ratio of anime images */
 .anime-card {
   width: 100%;
   aspect-ratio: 16 / 9;
