@@ -477,7 +477,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
   padding: 10px;
   
 }
-#CardEl{
+.CardEl{
   padding: 0;
 }
 .anime-card-container{
@@ -488,7 +488,7 @@ body.dark-mode #header-line a { color: lavenderblush; }
 
 /* Adding Padding to the Elements of Card excpet image*/
 
-#CardEl{
+.CardEl{
   padding: 0px 10px 0px 10px;
 }
 

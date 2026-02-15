@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </a>
 
   <!-- Title -->
-  <li class="AnimeName" id="CardEl"
+  <li class="AnimeName CardEl" 
       data-aos="fade-right" 
       data-aos-duration="400" 
       data-aos-easing="ease-in-out" 
@@ -40,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </li>
 
   <!-- Specs -->
-  <ul class="Anime-specs"
-      id="CardEl"
+  <ul class="Anime-specs CardEl"
       data-aos="fade-left" 
       data-aos-duration="400" 
       data-aos-easing="ease-in-out" 
@@ -54,18 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
   </ul>
 
   <!-- Story -->
-    <p class="anime-description"     id="desc-${index} id="CardEl""
+    <p class="anime-description"     id="desc-${index}" class = "CardEl"
          data-aos="fade"  
          data-aos-duration="200" 
          data-aos-easing="ease-in-out">
 
       <b>Story: </b>${anime.description}
     </p>
-    <button class="read-more" id="CardEl" data-id="${index}">Read More</button>
+    <button class="read-more CardEl" data-id="${index}">Read More</button>
 
 
   <!-- Links -->
-  <p class="anime-links" id="CardEl">
+  <p class="anime-links CardEl">
     <a href="${anime.imdbUrl}" class = "linkEl"target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-imdb-logo-icon-svg-png-download-461804.png" alt="IMDB" style="width:40px; height:auto;"></a> 
     <a href="${anime.malUrl}" class = "linkEl" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/MyAnimeList_favicon.svg" alt="My Anime List" style="width:40px; height:auto;"></a> 
   </p>
