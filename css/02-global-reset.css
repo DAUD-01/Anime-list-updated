@@ -1,0 +1,24 @@
+/* keep overflow-x setting */
+html, body {
+  overflow-x: hidden;
+}
+
+/* GLOBAL / RESET */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', "Serif";
+  background-color: var(--bg-color-light);
+  transition: background-color 0.3s ease-in;  
+}
+#random-button{
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;  
+  fill: gray;
+} 
+#random-button:hover {
+  fill: #4a4fff !important;
+}

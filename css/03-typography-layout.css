@@ -1,0 +1,135 @@
+/* TYPOGRAPHY */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--h1-color);
+  background: var(--h1-bg-light);
+  padding: 20px 0;
+  margin-top: -20px;
+  border-bottom: 2px solid var(--highlight-light);
+  border-radius: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease-in; 
+}
+
+p { color: var(--p-color); transition: color 0.3s ease-in; }
+
+a {
+  text-decoration: none;
+  color: var(--anker-light);
+}
+a:hover { color: var(--anker-hover-light); }
+
+.AnimeName {
+  color: var(--highlight-light);
+  font-size: 1.5rem;
+  box-sizing: border-box;  
+  font-weight: 700;  
+  list-style: none;
+  margin-top: 10px;
+  transition: color 0.3s ease-in; 
+}
+
+.anime-description {
+  margin: 20px 0;
+  font-size: 13.5px;
+  color: var(--an-description-light);
+  line-height: 25px;
+  text-transform: capitalize;
+  display: -webkit-box;
+ -webkit-line-clamp: 4;   
+  line-clamp: 4;           
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in; 
+
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 1.1rem;
+}
+  ul li {
+       color: var(--an-description-light);
+       transition: color 0.3s ease-in; 
+}
+ #anime-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      padding: 20px;
+ }
+ .anime-card-container{
+   background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease-in; 
+ }
+ .AnimeName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--highlight-light);
+  transition: color 0.3s ease-in; 
+}
+.Anime-specs {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  color: var(--p-color);
+  transition: color 0.3s ease-in; 
+}
+.Anime-specs li { margin: 4px 0; }
+.anime-description {
+  font-size: 0.9rem;
+  color: var(--an-description-light);
+  transition: color 0.3s ease-in; 
+  margin: 12px 12px 12px 12px !important;
+}
+/* Formatting Read More Button */
+.read-more {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  padding: 6px 10px !important;
+  margin-left: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--highlight-dark);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Adding Padding to the Elements of Card excpet image*/
+.CardEl{
+  padding: 0px 10px 0px 10px;
+}
+
+.read-more:hover {
+  background-color: var(--highlight-light);
+}
+
+.read-more:active {
+  transform: scale(1.05);
+}
+
+
+.anime-links a {
+   border: none;
+}
+.anime-links a:hover { color: var(--anker-hover-light); }
