@@ -80,7 +80,6 @@
  .anime-card-container{
   box-shadow: none; 
   background-color: none;
-  padding: 40px;
  }
  #anime-list {
       /*display: grid;
@@ -98,11 +97,10 @@
   
 }
 .CardEl{
-  padding: 0;
+  padding-left: 10px;
+  /* margin-left: 20px; */
 }
-.anime-card-container{
-  padding: 0;
-}
+
 
 }
 

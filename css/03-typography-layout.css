@@ -56,8 +56,8 @@ ul {
   font-size: 1.1rem;
 }
   ul li {
-       color: var(--an-description-light);
-       transition: color 0.3s ease-in; 
+  color: var(--an-description-light);
+  transition: color 0.3s ease-in; 
 }
  #anime-list {
       display: grid;
@@ -96,7 +96,6 @@ ul {
   font-size: 0.9rem;
   color: var(--an-description-light);
   transition: color 0.3s ease-in; 
-  margin: 12px 12px 12px 12px !important;
 }
 /* Formatting Read More Button */
 .read-more {

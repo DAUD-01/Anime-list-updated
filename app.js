@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </ul>
 
   <!-- Story -->
-    <p class="anime-description"     id="desc-${index}" class = "CardEl"
+    <p class="anime-description CardEl"     id="desc-${index}" 
          data-aos="fade"  
          data-aos-duration="200" 
          data-aos-easing="ease-in-out">
